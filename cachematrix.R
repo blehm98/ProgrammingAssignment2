@@ -6,7 +6,8 @@
 
 makeCacheMatrix <- function(matrix) {
   ##you can specify your own matrix in-function or pre-define object 'matrix'
-  ## try makeCacheMatrix( c(1:5, 10:7), 3, 3) if uncreative
+  ## try makeCacheMatrix( matrix(c(1:5, 10:7), 3, 3)) if uncreative
+  ##if you specify your matrix inside the function, matrix() must not be capitalized!!
   m1 <<- matrix ##caches matrix
   m1i <<- solve(m1) ##caches m1's inverse
   print("matrix is now cached as 'm1', and its inverse as 'm1i'")
@@ -20,7 +21,7 @@ cacheSolve <- function(matrix) {
     ## if we don't need to recalculate the inverse it lets you know
   } else {
     m2i <<- solve(matrix) ##caches the new inverse without overwriting the old inverse
-    print('inverse of input matrix is now cached as 'm2i'")
+    print("inverse of input matrix is now cached as 'm2i'")
     ##recalculate inverse as m2i if the matrix supplied here is different than that used to make
     ##m1i
   }
